@@ -1,5 +1,37 @@
 ### Reciprocal Blast.md
 
+## The idea 
+
+*summarised by your favorite LLM friend*
+
+The idea of “reciprocal BLAST” is a bit different from when you’re comparing full genomes/proteomes for orthologs. Let me break it down:
+
+1. What you normally do with eDNA BLAST
+
+You take your short eDNA reads or assembled contigs.
+
+You run BLAST (usually blastn) against a reference database (e.g. NCBI nt, or a curated species database).
+
+The “best hit” gives you a candidate species or taxon for your sequence.
+
+This is a one-directional search: query → database.
+
+2. Where “reciprocal BLAST” comes in
+
+To strengthen the confidence of your taxonomic assignment, you can:
+
+BLAST your eDNA sequence (query) against the database → record best hit (e.g., species X).
+
+Take that best hit sequence from the database (species X reference).
+
+BLAST it back against your full query set (or your local database).
+
+If the best hit of species X is your original eDNA sequence, that’s a reciprocal best hit.
+
+This reduces the chance that your eDNA read is just matching to a conserved region shared across many species.
+
+## The Recipe
+
 1. Make a fasta file with your own sequences. Create a tab file called mysequencesdb.txt which is a tab delimited file of two columns. Here, db stands for database  All your sequence names in the first column (with a unique identifier, e.g. TA), all the squences themselves in the second one. No Headers.
 
 2. In R:
