@@ -1,4 +1,4 @@
-### Reciprocal Blast.md
+## Reciprocal Blast
 
 ## The idea 
 
