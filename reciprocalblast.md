@@ -34,4 +34,4 @@ In the terminal:
 
 ```
 blastn -query myquery.fasta  -db mysequencesdb -outfmt 7   >  blast_results.txt
-``
+```
